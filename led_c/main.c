@@ -17,11 +17,29 @@ void gpio_init(void){
     GPIO1_DR = 0X0;
 }
 
+void delay(volatile unsigned int n)
+{
+    while(n--)
+    {    
+    }
+}
+
+void delay_ms(volatile unsigned int n)
+{
+    while(n--)
+    {
+        delay(0x7ff);
+    }
+}
+
 int main(void){
     clock_init();
     gpio_init();
     while(1){
-        
+        GPIO1_DR &= ~(1<<3);
+        delay_ms(500);
+        GPIO1_DR |= (1<<3);
+        delay_ms(500);
     }
     return 0;
 }
