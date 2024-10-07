@@ -1,5 +1,5 @@
 cross_compile 	?= arm-linux-gnueabihf-
-name			?= key
+name			?= clk
 
 gcc				:= $(cross_compile)gcc
 ld 				:= $(cross_compile)ld
@@ -7,19 +7,11 @@ objcopy 		:= $(cross_compile)objcopy
 objdump 		:= $(cross_compile)objdump
 
 includedir		:= include \
-				   bsp/clk \
-				   bsp/key \
-				   bsp/delay \
-				   bsp/gpio \
-				   bsp/led \
+				   bsp/include \
 				   project
 
 sourcedir		:= project \
-				   bsp/clk \
-				   bsp/key \
-				   bsp/led \
-				   bsp/gpio \
-				   bsp/delay 	  
+				   bsp	  
 
 inclued			:= $(patsubst %, -I%, $(includedir))
 

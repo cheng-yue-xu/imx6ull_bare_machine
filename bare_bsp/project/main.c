@@ -7,6 +7,7 @@
 int main(void)
 {
     clk_init();
+    clk_enable();
     led_init();
     key_init();
     while(1)

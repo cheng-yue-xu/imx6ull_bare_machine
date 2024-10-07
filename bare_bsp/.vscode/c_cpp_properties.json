@@ -5,12 +5,7 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/include",
-                "${workspaceFolder}/project",
-                "${workspaceFolder}/bsp/clk",
-                "${workspaceFolder}/bsp/key",
-                "${workspaceFolder}/bsp/delay",
-                "${workspaceFolder}/bsp/led",
-                "${workspaceFolder}/bsp/gpio"
+                "${workspaceFolder}/bsp/include"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",
