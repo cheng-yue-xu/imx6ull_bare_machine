@@ -12,10 +12,10 @@ int main(void)
     key_init();
     while(1)
     {
-        if(key_read())
-            led_on();
-        else
-            led_off();
+        led_on();
+        delay_ms(1000);
+        led_off();
+        delay_ms(1000);
     }
     return 0;
 }
