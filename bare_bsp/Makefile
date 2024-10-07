@@ -1,5 +1,5 @@
 cross_compile 	?= arm-linux-gnueabihf-
-name			?= clk
+name			?= int
 
 gcc				:= $(cross_compile)gcc
 ld 				:= $(cross_compile)ld

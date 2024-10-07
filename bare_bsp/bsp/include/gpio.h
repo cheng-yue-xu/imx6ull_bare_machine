@@ -1,10 +1,7 @@
 #ifndef __GPIO_H__
 #define __GPIO_H__
 
-#include "cc.h"
-#include "fsl_common.h"
-#include "fsl_iomuxc.h"
-#include "MCIMX6Y2.h"
+#include "imx6ull.h"
 
 typedef enum _gpio_pin_direction
 {

@@ -2,10 +2,12 @@
 #include "led.h"
 #include "delay.h"
 #include "key.h"
-#include "main.h"
+#include "int.h"
+#include "imx6ull.h"
 
 int main(void)
-{
+{   
+    int_init();
     clk_init();
     clk_enable();
     led_init();
