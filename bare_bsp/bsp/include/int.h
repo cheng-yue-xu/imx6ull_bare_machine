@@ -9,5 +9,6 @@ typedef struct _sys_irq_handle
     void *userparam;
 }sys_irq_handle_t;
 void int_init(void);
-
+void default_irqhandler(unsigned int gicciar,void *userparam);
+void system_register_irqhandler(IRQn_Type irq,system_irq_handler_t irqhandler, void *userparam);
 #endif
