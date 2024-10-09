@@ -3,6 +3,8 @@
 #include "delay.h"
 #include "key.h"
 #include "int.h"
+#include "beep.h"
+#include "exit.h"
 #include "imx6ull.h"
 
 int main(void)
@@ -11,7 +13,8 @@ int main(void)
     clk_init();
     clk_enable();
     led_init();
-    key_init();
+    beep_init();
+    exit_init();
     while(1)
     {
         led_on();

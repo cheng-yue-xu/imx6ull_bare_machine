@@ -1,12 +1,4 @@
 .global _start
-.global _bss_start
-_bss_start:
-    .word __bss_start
-
-.global _bss_end
-_bss_end:
-    .word __bss_end
-    
 _start:
     ldr pc,=Reset_Handler
     ldr pc,=Undefined_Handler
@@ -37,6 +29,13 @@ Reset_Handler:
     dsb
     isb
 #endif
+.global _bss_start
+_bss_start:
+    .word __bss_start
+
+.global _bss_end
+_bss_end:
+    .word __bss_end
     
     @clean bss
     ldr r0,=_bss_start
