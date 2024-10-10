@@ -3,6 +3,7 @@
 #include "gpio.h"
 #include "delay.h"
 #include "beep.h"
+#include "epit.h"
 void exit_init(void)
 {
     gpio_pin_config_t config;
@@ -18,19 +19,6 @@ void exit_init(void)
 
 void exit_handler(unsigned int gicciar,void *userparam)
 {
-    static unsigned int state = 0;
-    delay_ms(10);
-    if(gpio_pin_read(GPIO1,18)==0)
-    {
-        if(state)
-        state=0;
-        else
-        state=1;
-        
-        if(state)
-        beep_ring();
-        else
-        beep_stop();
-    }
+    epit_enable();
     gpio_clearintflags(GPIO1,18);
 }

@@ -1,10 +1,9 @@
 #include "clk.h"
 #include "led.h"
-#include "delay.h"
-#include "key.h"
 #include "int.h"
-#include "beep.h"
+#include "epit.h"
 #include "exit.h"
+#include "beep.h"
 #include "imx6ull.h"
 
 int main(void)
@@ -15,12 +14,9 @@ int main(void)
     led_init();
     beep_init();
     exit_init();
+    epit_init(659,1000);
     while(1)
     {
-        led_on();
-        delay_ms(1000);
-        led_off();
-        delay_ms(1000);
     }
     return 0;
 }
